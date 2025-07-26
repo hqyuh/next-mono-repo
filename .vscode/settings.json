@@ -1,3 +1,18 @@
 {
-  "cSpell.words": ["shadcn", "toploader", "turbopack"]
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll": "always",
+    "source.organizeImports": "always",
+    "source.sortMembers": "always",
+    "source.addMissingImports": "always"
+  },
+  "cSpell.words": [
+    "addgroup",
+    "adduser",
+    "libc",
+    "nextjs",
+    "shadcn",
+    "toploader",
+    "turbopack"
+  ]
 }

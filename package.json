@@ -5,12 +5,15 @@
   "scripts": {
     "build": "turbo build",
     "dev": "turbo dev",
-    "lint": "turbo lint",
-    "format": "prettier --write \"**/*.{ts,tsx,md}\""
+    "lint": "pnpm -r lint",
+    "lint:fix": "pnpm -r lint:fix",
+    "prettier": "pnpm -r prettier",
+    "prettier:fix": "pnpm -r prettier:fix"
   },
   "devDependencies": {
     "@workspace/eslint-config": "workspace:*",
     "@workspace/typescript-config": "workspace:*",
+    "@ianvs/prettier-plugin-sort-imports": "^4.4.1",
     "prettier": "^3.5.3",
     "turbo": "^2.5.4",
     "typescript": "5.8.3"

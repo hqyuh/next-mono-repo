@@ -6,12 +6,24 @@
   "exports": {
     "./base": "./base.js",
     "./next-js": "./next.js",
-    "./react-internal": "./react-internal.js"
+    "./react-internal": "./react-internal.js",
+    "./prettier.config.js": "./prettier.config.js"
   },
   "devDependencies": {
     "@next/eslint-plugin-next": "^15.3.2",
+    "@eslint/eslintrc": "^3",
+    "@eslint/js": "^9.21.0",
+    "@ianvs/prettier-plugin-sort-imports": "^4.4.1",
+    "@nabla/vite-plugin-eslint": "^2.0.4",
+    "@stylistic/eslint-plugin-ts": "^2.9.0",
     "@typescript-eslint/eslint-plugin": "^8.32.1",
     "@typescript-eslint/parser": "^8.32.1",
+    "eslint-config-next": "15.2.0",
+    "eslint-plugin-import": "^2.31.0",
+    "eslint-plugin-prettier": "^5.2.3",
+    "eslint-plugin-sonarjs": "^2.0.4",
+    "eslint-plugin-unicorn": "^56.0.0",
+    "eslint-plugin-unused-imports": "^4.1.4",
     "eslint": "^9.27.0",
     "eslint-config-prettier": "^10.1.5",
     "eslint-plugin-only-warn": "^1.1.0",
@@ -19,7 +31,10 @@
     "eslint-plugin-react-hooks": "^5.2.0",
     "eslint-plugin-turbo": "^2.5.3",
     "globals": "^16.1.0",
+    "prettier": "^3.5.2",
+    "prettier-plugin-sort-json": "^4.1.1",
+    "prettier-plugin-tailwindcss": "^0.6.11",
     "typescript": "^5.8.3",
-    "typescript-eslint": "^8.32.1"
+    "typescript-eslint": "^8.7.0"
   }
 }
