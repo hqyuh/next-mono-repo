@@ -1,4 +1,5 @@
 import { ModeToggle } from '@/src/components/mode-toggle';
+import HttpStatusCode from '@workspace/shared/enums/http-status-code.enum';
 import {
   DropdownMenu,
   DropdownMenuCheckboxItem,
@@ -17,6 +18,9 @@ export default function Home() {
     <>
       <main className='flex flex-col gap-8 row-start-2 items-center sm:items-start'>
         <ModeToggle />
+
+        <div>{HttpStatusCode.ACCEPTED}</div>
+        <div>{process.env.NEXT_PUBLIC_APP_URL}</div>
 
         <Button size={'sm'}>Click me</Button>
 
