@@ -20,7 +20,7 @@ COPY . .
 
 RUN pnpm install --frozen-lockfile
 
-RUN npx turbo prune web --docker
+RUN npx turbo prune main --docker
 
 # -----------------------
 # Installer
@@ -30,12 +30,12 @@ FROM base AS installer
 WORKDIR /app
 
 COPY --from=builder /app/out/json/ ./
-COPY apps/web/.env ./apps/web/.env
+COPY apps/main/.env ./apps/main/.env
 
 RUN pnpm install --frozen-lockfile
 
 COPY --from=builder /app/out/full/ ./
-RUN pnpm turbo run build --filter=web...
+RUN pnpm turbo run build --filter=main...
 
 # -----------------------
 # Runner
@@ -48,10 +48,10 @@ RUN addgroup --system --gid 1001 nodejs
 RUN adduser --system --uid 1001 nextjs
 USER nextjs
 
-COPY --from=installer --chown=nextjs:nodejs /app/apps/web/.next/standalone ./
-COPY --from=installer --chown=nextjs:nodejs /app/apps/web/.next/static ./apps/web/.next/static
-COPY --from=installer --chown=nextjs:nodejs /app/apps/web/public ./apps/web/public
-COPY --from=installer --chown=nextjs:nodejs /app/apps/web/.env ./apps/web/.env
+COPY --from=installer --chown=nextjs:nodejs /app/apps/main/.next/standalone ./
+COPY --from=installer --chown=nextjs:nodejs /app/apps/main/.next/static ./apps/main/.next/static
+COPY --from=installer --chown=nextjs:nodejs /app/apps/main/public ./apps/main/public
+COPY --from=installer --chown=nextjs:nodejs /app/apps/main/.env ./apps/main/.env
 
 EXPOSE 3000
-CMD ["node", "apps/web/server.js"]
+CMD ["node", "apps/main/server.js"]

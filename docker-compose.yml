@@ -1,12 +1,26 @@
 services:
-  web:
-    container_name: web-app
+  main:
+    container_name: main-app
     build:
       context: .
-      dockerfile: apps/web/Dockerfile
+      dockerfile: apps/main/Dockerfile
     ports:
       - "3000:3000"
     environment:
+      - PORT=3000
+      - NODE_ENV=production
+      - NEXT_TELEMETRY_DISABLED=1
+    restart: always
+
+  admin:
+    container_name: admin-app
+    build:
+      context: .
+      dockerfile: apps/admin/Dockerfile
+    ports:
+      - "3001:3001"
+    environment:
+      - PORT=3001
       - NODE_ENV=production
       - NEXT_TELEMETRY_DISABLED=1
     restart: always

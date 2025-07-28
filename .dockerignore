@@ -1,5 +1,5 @@
 node_modules
-apps/web/node_modules
+apps/main/node_modules
 packages/*/node_modules
 dist
 .next

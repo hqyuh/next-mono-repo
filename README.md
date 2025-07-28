@@ -21,17 +21,17 @@ pnpm dev
 
 ## Adding components
 
-To add components to your app, run the following command at the root of your `web` app:
+To add components to your app, run the following command at the root of your `main` app:
 
 ```bash
-pnpm dlx shadcn@latest add button -c apps/web
+pnpm dlx shadcn@latest add button -c apps/main
 ```
 
 This will place the ui components in the `packages/ui/src/components` directory.
 
 ## Tailwind
 
-Your `globals.css` are already set up to use the components from the `ui` package which is imported in the `web` app.
+Your `globals.css` are already set up to use the components from the `ui` package which is imported in the `main` app.
 
 ## Using components
 
