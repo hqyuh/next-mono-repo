@@ -7,26 +7,25 @@ settings:
 importers:
 
   .:
-    dependencies:
+    devDependencies:
       '@commitlint/cli':
         specifier: ^19.8.1
         version: 19.8.1(@types/node@20.17.19)(typescript@5.8.3)
       '@commitlint/config-conventional':
         specifier: ^19.8.1
         version: 19.8.1
-      husky:
-        specifier: ^9.1.7
-        version: 9.1.7
-      lint-staged:
-        specifier: ^16.1.5
-        version: 16.1.5
-    devDependencies:
       '@workspace/eslint-config':
         specifier: workspace:*
         version: link:packages/eslint-config
       '@workspace/typescript-config':
         specifier: workspace:*
         version: link:packages/typescript-config
+      husky:
+        specifier: ^9.1.7
+        version: 9.1.7
+      lint-staged:
+        specifier: ^16.1.5
+        version: 16.1.5
       prettier:
         specifier: ^3.5.3
         version: 3.5.3
