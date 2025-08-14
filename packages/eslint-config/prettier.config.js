@@ -17,6 +17,18 @@ export default {
   vueIndentScriptAndStyle: false,
   printWidth: 120,
   endOfLine: 'auto',
+  plugins: ['@ianvs/prettier-plugin-sort-imports', 'prettier-plugin-tailwindcss', 'prettier-plugin-sort-json'],
+  importOrder: [
+    '^(react/(.*)$)|^(react$)',
+    '',
+    '^(next/(.*)$)|^(next$)',
+    '',
+    '<THIRD_PARTY_MODULES>',
+    '',
+    '^@/(.*)$',
+    '',
+    '^[./]'
+  ],
   importOrderParserPlugins: ['typescript', 'jsx', 'decorators-legacy'],
   importOrderTypeScriptVersion: '5.0.0',
   importOrderCaseSensitive: false

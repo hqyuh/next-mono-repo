@@ -8,12 +8,16 @@
     "lint": "pnpm -r lint",
     "lint:fix": "pnpm -r lint:fix",
     "prettier": "pnpm -r prettier",
-    "prettier:fix": "pnpm -r prettier:fix"
+    "prettier:fix": "pnpm -r prettier:fix",
+    "prepare": "husky"
   },
   "devDependencies": {
-    "@ianvs/prettier-plugin-sort-imports": "^4.4.1",
     "@workspace/eslint-config": "workspace:*",
     "@workspace/typescript-config": "workspace:*",
+    "@commitlint/cli": "^19.8.1",
+    "@commitlint/config-conventional": "^19.8.1",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.1.5",
     "prettier": "^3.5.3",
     "turbo": "^2.5.5",
     "typescript": "5.8.3"

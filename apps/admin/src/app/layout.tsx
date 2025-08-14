@@ -2,8 +2,11 @@ import { Geist, Geist_Mono } from 'next/font/google';
 
 import '@workspace/ui/globals.css';
 
-import { Providers } from '@/src/providers/providers';
+import type { ReactNode } from 'react';
+
 import type { Metadata } from 'next';
+
+import { Providers } from '../providers/providers';
 
 const fontSans = Geist({
   subsets: ['latin'],
@@ -23,11 +26,11 @@ export const metadata: Metadata = {
 export default function RootLayout({
   children
 }: Readonly<{
-  children: React.ReactNode;
+  children: ReactNode;
 }>) {
   return (
     <html lang='en' suppressHydrationWarning>
-      <body className={`${fontSans.variable} ${fontMono.variable} font-sans antialiased `}>
+      <body className={`${fontSans.variable} ${fontMono.variable} font-sans antialiased`}>
         <Providers>{children}</Providers>
       </body>
     </html>
