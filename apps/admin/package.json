@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "type": "module",
   "private": true,
+  "prettier": "@workspace/eslint-config/prettier.config.js",
   "scripts": {
     "dev": "next dev --turbopack --port 3001",
     "build": "next build",

@@ -1,1 +1,1 @@
-export * from "./axios.type";
+export * from './axios.type';

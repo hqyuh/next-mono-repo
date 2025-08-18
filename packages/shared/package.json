@@ -3,7 +3,10 @@
   "version": "0.0.0",
   "license": "MIT",
   "main": "src/index.ts",
-  "scripts": {},
+  "prettier": "@workspace/eslint-config/prettier.config.js",
+  "scripts": {
+    "lint": "eslint . --max-warnings 0"
+  },
   "dependencies": {
     "axios": "^1.11.0",
     "typescript": "^5.5.3"
