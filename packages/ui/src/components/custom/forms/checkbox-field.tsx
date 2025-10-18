@@ -1,21 +1,10 @@
-import type * as CheckboxPrimitive from "@radix-ui/react-checkbox";
-import type {
-  Control,
-  FieldPath,
-  FieldPathValue,
-  FieldValues,
-} from "react-hook-form";
+import type * as CheckboxPrimitive from '@radix-ui/react-checkbox';
+import { cn } from '@workspace/ui/lib/utils';
+import type { Control, FieldPath, FieldPathValue, FieldValues } from 'react-hook-form';
 
-import {
-  FormControl,
-  FormField,
-  FormItem,
-  FormLabel,
-  FormMessage,
-} from "../../ui/form";
-import { Checkbox } from "../../ui/checkbox";
-import { cn } from "@workspace/ui/lib/utils";
-import { Show } from "../show";
+import { Checkbox } from '../../ui/checkbox';
+import { FormControl, FormField, FormItem, FormLabel, FormMessage } from '../../ui/form';
+import { Show } from '../show';
 
 type TProps<T extends FieldValues = FieldValues> = {
   control?: Control<T>;
@@ -43,21 +32,17 @@ export const CheckboxField = <T extends FieldValues>({
     render={({ field }) => (
       <FormItem>
         <FormControl>
-          <div className="flex gap-2">
+          <div className='flex gap-2'>
             <Checkbox
               checked={field.value?.includes(value)}
               onCheckedChange={(checked) =>
                 checked
                   ? field.onChange([...field.value, value])
-                  : field.onChange(
-                      field.value?.filter(
-                        (current: string) => current !== value
-                      )
-                    )
+                  : field.onChange(field.value?.filter((current: string) => current !== value))
               }
               {...props}
               className={cn(
-                "data-[state=checked]:bg-cl-1 h-5 w-5 rounded-md shadow-none outline-none transition-all duration-300 data-[state=checked]:border-none",
+                'data-[state=checked]:bg-cl-1 h-5 w-5 rounded-md shadow-none transition-all duration-300 outline-none data-[state=checked]:border-none',
                 className
               )}
             />
@@ -66,8 +51,8 @@ export const CheckboxField = <T extends FieldValues>({
                 {label}
                 {required && (
                   <span
-                    className={cn("text-error-light", {
-                      "text-gray-900": !props.disabled,
+                    className={cn('text-error-light', {
+                      'text-gray-900': !props.disabled
                     })}
                   >
                     *
@@ -75,7 +60,7 @@ export const CheckboxField = <T extends FieldValues>({
                 )}
               </FormLabel>
             </Show>
-            <FormMessage className="mt-1 text-xs" />
+            <FormMessage className='mt-1 text-xs' />
           </div>
         </FormControl>
       </FormItem>

@@ -1,4 +1,4 @@
-import React, { createContext, useContext, type JSX } from "react";
+import React, { createContext, useContext, type JSX } from 'react';
 
 /**
  * Creates a safe context that can be used to provide and consume values in the React component tree.
@@ -10,10 +10,7 @@ import React, { createContext, useContext, type JSX } from "react";
  */
 export function createSafeContext<ContextValue>(
   errorMessage: string
-): [
-  (props: { value: ContextValue; children: React.ReactNode }) => JSX.Element,
-  () => ContextValue,
-] {
+): [(props: { value: ContextValue; children: React.ReactNode }) => JSX.Element, () => ContextValue] {
   const Context = createContext<ContextValue | null>(null);
 
   const useSafeContext = () => {
@@ -26,13 +23,9 @@ export function createSafeContext<ContextValue>(
     return ctx;
   };
 
-  const Provider = ({
-    children,
-    value,
-  }: {
-    value: ContextValue;
-    children: React.ReactNode;
-  }) => <Context.Provider value={value}>{children}</Context.Provider>;
+  const Provider = ({ children, value }: { value: ContextValue; children: React.ReactNode }) => (
+    <Context.Provider value={value}>{children}</Context.Provider>
+  );
 
   return [Provider, useSafeContext] as const;
 }

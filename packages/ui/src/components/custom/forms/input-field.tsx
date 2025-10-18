@@ -1,20 +1,9 @@
-import type {
-  Control,
-  FieldPath,
-  FieldPathValue,
-  FieldValues,
-} from "react-hook-form";
+import { cn } from '@workspace/ui/lib/utils';
+import type { Control, FieldPath, FieldPathValue, FieldValues } from 'react-hook-form';
 
-import {
-  FormControl,
-  FormField,
-  FormItem,
-  FormLabel,
-  FormMessage,
-} from "../../ui/form";
-import { cn } from "@workspace/ui/lib/utils";
-import { Input } from "../../ui/input";
-import { Show } from "../show";
+import { FormControl, FormField, FormItem, FormLabel, FormMessage } from '../../ui/form';
+import { Input } from '../../ui/input';
+import { Show } from '../show';
 
 type TProps<T extends FieldValues = FieldValues> = {
   control?: Control<T>;
@@ -44,16 +33,11 @@ export const InputField = <T extends FieldValues>({
           <div>
             <Show when={Boolean(label)}>
               <FormLabel className={labelClassName}>
-                {label}{" "}
-                {required && <span className="text-error-light">*</span>}
+                {label} {required && <span className='text-error-light'>*</span>}
               </FormLabel>
             </Show>
-            <Input
-              {...field}
-              {...props}
-              className={cn("mt-2 w-full", className)}
-            />
-            <FormMessage className="mt-1 text-xs" />
+            <Input {...field} {...props} className={cn('mt-2 w-full', className)} />
+            <FormMessage className='mt-1 text-xs' />
           </div>
         </FormControl>
       </FormItem>
