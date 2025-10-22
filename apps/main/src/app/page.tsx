@@ -1,4 +1,5 @@
 import HttpStatusCode from '@workspace/shared/enums/http-status-code.enum';
+import { Button } from '@workspace/ui/components/ui/button';
 import {
   DropdownMenu,
   DropdownMenuCheckboxItem,
@@ -8,8 +9,7 @@ import {
   DropdownMenuSubContent,
   DropdownMenuSubTrigger,
   DropdownMenuTrigger
-} from '@workspace/ui/components/dropdown-menu';
-import { Button } from '@workspace/ui/components/ui/button';
+} from '@workspace/ui/components/ui/dropdown-menu';
 import { ChevronDownIcon } from 'lucide-react';
 
 import { ModeToggle } from '@/src/components/mode-toggle';
