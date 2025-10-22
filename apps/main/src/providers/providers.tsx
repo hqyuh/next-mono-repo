@@ -1,6 +1,6 @@
 'use client';
 
-import { TailwindIndicator } from '@workspace/ui/components';
+import { TailwindIndicator } from '@workspace/ui/components/tailwind-indicator';
 import TopLoader from '@workspace/ui/components/top-loader';
 
 import { ThemeProvider } from './theme-provider';
